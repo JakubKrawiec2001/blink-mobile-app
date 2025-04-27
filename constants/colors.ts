@@ -1,12 +1,13 @@
 export const colors = {
+  primary: "#FD366E",
   dark: {
     text: "#ffffff",
-    background: "#212121",
-    statusBarBackground: "#0F0F0F",
+    background: "#19191C",
+    lightBackground: "#212121",
   },
   light: {
     text: "#000000",
     background: "#ffffff",
-    statusBarBackground: "#dddddd",
+    lightBackground: "#dddddd",
   },
 };

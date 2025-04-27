@@ -1,19 +1,17 @@
+import { StyleSheet, Text, View } from "react-native";
+import React from "react";
 import { useTheme } from "@/hooks/useTheme";
-import { Link } from "expo-router";
-import { Image, StyleSheet, Text, View } from "react-native";
 
-export default function Index() {
+const settings = () => {
   const theme = useTheme();
   return (
     <View style={[styles.container, { backgroundColor: theme.background }]}>
-      <Image source={require("@/assets/images/logo.png")} style={styles.logo} />
-      <Text style={[styles.text, { color: theme.text }]}>Home</Text>
-      <Link href="/contact" style={styles.button}>
-        View details
-      </Link>
+      <Text style={[styles.text, { color: theme.text }]}>Settings</Text>
     </View>
   );
-}
+};
+
+export default settings;
 
 const styles = StyleSheet.create({
   container: {
@@ -41,5 +39,6 @@ const styles = StyleSheet.create({
     width: 200,
     color: "white",
     fontSize: 20,
+    marginTop: 30,
   },
 });

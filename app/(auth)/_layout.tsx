@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { useTheme } from "@/hooks/useTheme";
 
-export default function RootLayout() {
+export default function AuthLayout() {
   const theme = useTheme();
   return (
     <>
@@ -11,14 +11,13 @@ export default function RootLayout() {
       <Stack
         screenOptions={{
           headerStyle: {
-            backgroundColor: theme.lightBackground,
+            backgroundColor: theme.statusBarBackground,
           },
           headerTintColor: theme.text,
         }}
       >
-        <Stack.Screen name="(auth)" options={{ headerShown: false }} />
-        <Stack.Screen name="(root)" options={{ headerShown: false }} />
-        <Stack.Screen name="new-chat" options={{ presentation: "modal" }} />
+        <Stack.Screen name="login" options={{ title: "Login" }} />
+        <Stack.Screen name="register" options={{ title: "Register" }} />
       </Stack>
     </>
   );
