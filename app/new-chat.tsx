@@ -12,5 +12,3 @@ const newChat = () => {
 };
 
 export default newChat;
-
-const styles = StyleSheet.create({});

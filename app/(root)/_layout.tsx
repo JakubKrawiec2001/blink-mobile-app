@@ -1,5 +1,5 @@
-import { Link, Tabs, useRouter } from "expo-router";
-import { Pressable, StyleSheet, Text } from "react-native";
+import { Link, Tabs } from "expo-router";
+import { Image, StyleSheet } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { useTheme } from "@/hooks/useTheme";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -8,7 +8,6 @@ import { colors } from "@/constants/colors";
 
 export default function RootLayout() {
   const theme = useTheme();
-  const router = useRouter();
   return (
     <>
       <StatusBar style="auto" />
@@ -37,14 +36,20 @@ export default function RootLayout() {
           },
           headerTitleAlign: "left",
           headerRight: () => (
-            <Link href="/new-chat" push asChild>
+            <Link href="/new-chat" asChild>
               <Ionicons
-                name="add"
-                size={24}
+                name="add-circle"
+                size={34}
                 color={colors.primary}
                 style={{ paddingRight: 10 }}
               />
             </Link>
+          ),
+          headerLeft: () => (
+            <Image
+              source={require("@/assets/images/logo-2.png")}
+              style={{ width: 30, height: 30, marginRight: 2, marginLeft: 10 }}
+            />
           ),
         }}
       >
